@@ -18,12 +18,23 @@
             dot2Wrap: $('.dot2Wrap'),
             keyword: $('.keyword'),
             question: $('.question'),
+            issue: $('.question .issue'),
+            questionBtn: $('#questionBtn'),
+            questionWrap: $('.questionWrap'),
+            answerWrap: $('.answerWrap'),
+            ansItem: $('.ansItem'),
+            answer: $('.answer'),
         },
         conf:{
             story:{
                 keyword1:0,
                 keyword2:0,
-                keyword3:0
+            },
+            answer:{
+                question1:[0,1,1,1],
+                question2:[0,1,1,1],
+                question3:[0,1,1,1],
+                question4:[0,1,1,1]
             },
         },
         bindUI: function(){
@@ -32,8 +43,36 @@
             _pri.node.dot.on('click', _pri.util.keywordShow);
             _pri.node.dotItem2.on('click', _pri.util.questionStart);
             _pri.node.tishi3.on('click', _pri.util.zhoubianStart);
+            _pri.node.questionBtn.on('click', _pri.util.answerStart);
         },
         util:{
+            answerStart: function(){
+                $(this).hide();
+                $(_pri.node.questionWrap).hide();
+                $(_pri.node.answerWrap).show();
+                _pri.util.answerFunc();
+            },
+            answerFunc: function(){
+                switch(_pri.conf.story.keyword1){
+                    case 1:
+                        $(_pri.node.answer[0]).show();
+                        $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).css('display','block');
+                        break;
+                    case 2:
+                        $(_pri.node.answer[1]).show();
+                        $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).css('display','block');
+
+                        break;
+                    case 3:
+                        $(_pri.node.answer[2]).show();
+                        $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).css('display','block');
+                        break;
+                    case 4:
+                        $(_pri.node.answer[3]).show();
+                        $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).css('display','block');
+                        break;
+                }
+            },
             zhoubianStart: function(){
                 $(this).hide();
                 $(_pri.node.dot2Wrap).show();
@@ -43,6 +82,7 @@
                 _pri.util.showKeyword2();
                 $(_pri.node.dot2Wrap).hide();
                 $(_pri.node.keyword_other).hide();
+                $(_pri.node.questionBtn).show();
             },
             keywordShow: function(){
                 _pri.conf.story.keyword1 = $(this).data('num');
@@ -73,17 +113,23 @@
                 switch(_pri.conf.story.keyword1){
                     case 1:
                         $(_pri.node.question[0]).show();
+                        $(_pri.node.issue[_pri.conf.story.keyword2-1]).css('display','block');
                         break;
                     case 2:
                         $(_pri.node.question[1]).show();
+                        $(_pri.node.issue[4+_pri.conf.story.keyword2-1]).css('display','block');
+
                         break;
                     case 3:
                         $(_pri.node.question[2]).show();
+                        $(_pri.node.issue[8+_pri.conf.story.keyword2-1]).css('display','block');
                         break;
                     case 4:
                         $(_pri.node.question[3]).show();
+                        $(_pri.node.issue[12+_pri.conf.story.keyword2-1]).css('display','block');
                         break;
                 }
+
             },
             hideNode: function(){
                 $(this).hide();

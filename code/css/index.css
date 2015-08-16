@@ -123,6 +123,8 @@ textarea {
 }
 .container .page1 {
   display: none;
+  position: relative;
+  z-index: 2;
   background: url('../img/globale1_bg.png') no-repeat;
   background-size: 100% 100%;
   width: 15.7rem;
@@ -375,7 +377,8 @@ textarea {
   z-index: 4;
 }
 .container .page1 .story1 .questionWrap .question {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
+  display: none;
 }
 .container .page1 .story1 .questionWrap .question .issue {
   display: none;
@@ -384,31 +387,143 @@ textarea {
   margin: 0 auto;
 }
 .container .page1 .story1 .questionWrap .question1 .issue {
-  background: url('../img/question1.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
-}
-.container .page1 .story1 .questionWrap .question1 .issue:nth-child(1) {
-  background-position: 0 0;
-}
-.container .page1 .story1 .questionWrap .question2 .issue {
-  background: url('../img/question2.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
-}
-.container .page1 .story1 .questionWrap .question2 .issue:nth-child(1) {
-  background-position: 0 0;
-}
-.container .page1 .story1 .questionWrap .question3 .issue {
-  background: url('../img/question3.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
-}
-.container .page1 .story1 .questionWrap .question3 .issue:nth-child(1) {
-  background-position: 0 0;
-}
-.container .page1 .story1 .questionWrap .question4 .issue {
   background: url('../img/question4.png') no-repeat;
   background-size: 11.5rem 9.35rem;
 }
+.container .page1 .story1 .questionWrap .question1 .issue:nth-child(1) {
+  background-position: -10.2rem 0;
+}
+.container .page1 .story1 .questionWrap .question1 .issue:nth-child(2) {
+  background-position: -7rem 0;
+}
+.container .page1 .story1 .questionWrap .question1 .issue:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .questionWrap .question1 .issue:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .questionWrap .question2 .issue {
+  background: url('../img/question3.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .questionWrap .question2 .issue:nth-child(1) {
+  background-position: -10.2rem 0;
+}
+.container .page1 .story1 .questionWrap .question2 .issue:nth-child(2) {
+  background-position: -7rem 0;
+}
+.container .page1 .story1 .questionWrap .question2 .issue:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .questionWrap .question2 .issue:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .questionWrap .question3 .issue {
+  background: url('../img/question2.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .questionWrap .question3 .issue:nth-child(1) {
+  background-position: -10.2rem 0;
+}
+.container .page1 .story1 .questionWrap .question3 .issue:nth-child(2) {
+  background-position: -7rem 0;
+}
+.container .page1 .story1 .questionWrap .question3 .issue:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .questionWrap .question3 .issue:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .questionWrap .question4 .issue {
+  background: url('../img/question1.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
 .container .page1 .story1 .questionWrap .question4 .issue:nth-child(1) {
+  background-position: -10.2rem 0;
+}
+.container .page1 .story1 .questionWrap .question4 .issue:nth-child(2) {
+  background-position: -7rem 0;
+}
+.container .page1 .story1 .questionWrap .question4 .issue:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .questionWrap .question4 .issue:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .answerWrap .answer {
+  margin-top: 1rem;
+  display: none;
+}
+.container .page1 .story1 .answerWrap .answer .ansItem {
+  display: none;
+  width: 3rem;
+  height: 9.35rem;
+  float: right;
+  margin-right: 2rem;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem {
+  background: url('../img/answer_shamo.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(1) {
+  background-position: -9.4rem 0;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(2) {
+  background-position: -6.4rem 0;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem {
+  background: url('../img/answer_shiti.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(1) {
+  background-position: -8.2rem 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(2) {
+  background-position: -7rem 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(3) {
+  background-position: -3.5rem 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(4) {
+  background-position: 0 0;
+}
+.container .page1 .story1 .answerWrap .answer3 .ansItem {
+  background: url('../img/answer_huochai.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(1) {
+  background-position: -6.7rem 0;
+  width: 5rem;
+}
+.container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(2) {
+  background-position: -3rem 0;
+}
+.container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(3) {
+  background-position: -1.5rem 0;
+}
+.container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(4) {
+  background-position: 2rem 0;
+}
+.container .page1 .story1 .answerWrap .answer4 .ansItem {
+  background: url('../img/answer_beibao.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(1) {
+  background-position: -9.2rem 0;
+}
+.container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(2) {
+  background-position: -6rem 0;
+}
+.container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(3) {
+  background-position: -2.5rem 0;
+}
+.container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(4) {
   background-position: 0 0;
 }
 .container .page1 .story1 .dot2Wrap {
@@ -431,7 +546,7 @@ textarea {
   overflow: hidden;
   width: 7.25rem;
   height: 50rem;
-  background: #000000 url('../img/btn.png');
+  background: url('../img/btn.png');
   background-size: 7.25rem 50rem;
   position: relative;
   background-position: -99999px -99999px;
@@ -446,6 +561,17 @@ textarea {
   display: block;
   position: absolute;
   left: 50%;
+  margin-left: -3.5rem;
+  top: 24.5rem;
+  z-index: 1;
+}
+.question_btn {
+  width: 5.625rem;
+  height: 2.05rem;
+  background-position: 0 -3rem;
+  display: none;
+  position: absolute;
+  left: 54%;
   margin-left: -3.5rem;
   top: 24.5rem;
   z-index: 1;
