@@ -169,6 +169,7 @@ textarea {
   background: url('../img/story1.png') no-repeat;
   background-size: 11.6rem 9.575rem;
   float: right;
+  opacity: 0;
 }
 .container .page1 .story1 .kuangWrap .line:nth-child(1) {
   background-position: -10.1rem 0;
@@ -213,6 +214,7 @@ textarea {
   margin: .8rem .2rem 0 0;
 }
 .container .page1 .story1 .dotWrap {
+  display: none;
   background: url('../img/dot.png') no-repeat;
   position: absolute;
   left: 1.8rem;
@@ -227,6 +229,7 @@ textarea {
   width: 1.625rem;
   display: block;
   position: absolute;
+  display: none;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(1) {
   right: -0.3rem;
@@ -260,10 +263,10 @@ textarea {
 }
 .container .page1 .story1 .tishiWrap .tishi1 {
   background: url('../img/tishi1.png') no-repeat;
+  display: none;
   background-size: 6rem 8.85rem;
   width: 6rem;
   height: 8.85rem;
-  display: block;
   position: absolute;
   left: 6.3rem;
   top: 10rem;
@@ -314,8 +317,7 @@ textarea {
 }
 .container .page1 .story1 .keyword_other .beibao {
   background: url('../img/keywordbeibao.png') no-repeat;
-  background-size: 16rem;
-  height: 5.95rem;
+  background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .beibao .circle {
@@ -330,8 +332,7 @@ textarea {
 }
 .container .page1 .story1 .keyword_other .huocai {
   background: url('../img/keywordhuocai.png') no-repeat;
-  background-size: 16rem;
-  height: 5.95rem;
+  background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .huocai .circle {
@@ -346,8 +347,7 @@ textarea {
 }
 .container .page1 .story1 .keyword_other .shiti {
   background: url('../img/keywordshiti.png') no-repeat;
-  background-size: 16rem;
-  height: 5.95rem;
+  background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .shiti .circle {
@@ -362,8 +362,7 @@ textarea {
 }
 .container .page1 .story1 .keyword_other .shamo {
   background: url('../img/keywordshamo.png') no-repeat;
-  background-size: 16rem;
-  height: 5.95rem;
+  background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .shamo .circle {
@@ -469,13 +468,13 @@ textarea {
   background-position: -9.4rem 0;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(2) {
-  background-position: -6.4rem 0;
+  background-position: -5.2rem 0;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(3) {
-  background-position: -3.5rem 0;
+  background-position: -1.5rem 0;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(4) {
-  background-position: 0 0;
+  background-position: 1rem 0;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem {
   background: url('../img/answer_shiti.png') no-repeat;
@@ -485,7 +484,7 @@ textarea {
   background-position: -8.2rem 0;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(2) {
-  background-position: -7rem 0;
+  background-position: -5.2rem 0;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(3) {
   background-position: -3.5rem 0;
@@ -502,7 +501,8 @@ textarea {
   width: 5rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(2) {
-  background-position: -3rem 0;
+  background-position: -4.5rem 0;
+  width: 2rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(3) {
   background-position: -1.5rem 0;
@@ -542,6 +542,42 @@ textarea {
   float: right;
   margin-right: .4rem;
 }
+.container .page1 .story1 .yesOrNo .yes {
+  margin: 2rem 1rem;
+  background: url('../img/yes.png') no-repeat;
+  float: right;
+  background-size: 4.225rem 4.2rem;
+  width: 4.225rem;
+  height: 4.2rem;
+  display: none;
+}
+.container .page1 .story1 .yesOrNo .no {
+  margin: 2rem 1rem;
+  background: url('../img/no.png') no-repeat;
+  float: right;
+  background-size: 4.225rem 4.2rem;
+  width: 4.225rem;
+  height: 4.2rem;
+  display: none;
+}
+.container .page1 .story1 .goodOrImportant {
+  position: relative;
+  left: 2rem;
+}
+.container .page1 .story1 .goodOrImportant .good {
+  background: url('../img/miaozai.png') no-repeat;
+  background-size: 2.1rem 3.1rem;
+  width: 2.1rem;
+  height: 3.1rem;
+  display: none;
+}
+.container .page1 .story1 .goodOrImportant .important {
+  background: url('../img/zhongyao.png') no-repeat;
+  background-size: 2.275rem 3.55rem;
+  width: 2.275rem;
+  height: 3.55rem;
+  display: none;
+}
 .icon_common {
   overflow: hidden;
   width: 7.25rem;
@@ -573,8 +609,126 @@ textarea {
   position: absolute;
   left: 54%;
   margin-left: -3.5rem;
-  top: 24.5rem;
+  top: 24.3rem;
   z-index: 1;
+}
+.returnBtn {
+  width: 5.7rem;
+  height: 2.375rem;
+  background-position: 0 -5.5rem;
+  display: none;
+  position: absolute;
+  left: 37%;
+  margin-left: -3.5rem;
+  top: 24.3rem;
+  z-index: 1;
+}
+.jinnangBtn {
+  width: 5.125rem;
+  height: 2.3rem;
+  background-position: 0 -11.5rem;
+  display: none;
+  position: absolute;
+  left: 37%;
+  margin-left: -3.5rem;
+  top: 24.3rem;
+  z-index: 1;
+}
+.answerBtn {
+  width: 5.125rem;
+  height: 2.3rem;
+  background-position: 0 -8.5rem;
+  display: none;
+  position: absolute;
+  left: 78%;
+  margin-left: -3.5rem;
+  top: 24.3rem;
+  z-index: 1;
+}
+.slowShow {
+  opacity: 1;
+  -webkit-animation-name: show;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+.printshake {
+  opacity: 0;
+  -webkit-animation: print ease 0.5s 0.5s, shaking linear 0.2s 1s forwards;
+}
+@-webkit-keyframes print {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes print {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes shaking {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translate(0.1rem, 0.15rem);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(-0.1rem, 0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translate(0.1rem, -0.15rem);
+  }
+  40% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0.15rem);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translate(-0.15rem, -0.15rem);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(0.15rem, 0.15rem);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translate(0.1rem, -0.1rem);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translate(-0.1rem, -0.1rem);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
 }
 @-webkit-keyframes bgLight {
   0% {
