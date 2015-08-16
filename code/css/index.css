@@ -578,6 +578,46 @@ textarea {
   height: 3.55rem;
   display: none;
 }
+.container .page1 .jinnangWrap {
+  margin-top: 2.5rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .threeWrap {
+  background: url('../img/jinnang.png') no-repeat;
+  background-size: 11.25rem 16.85rem;
+  width: 11.25rem;
+  height: 16.85rem;
+  margin: 0 auto;
+  z-index: 4;
+}
+.container .page1 .jinnangWrap .threeWrap .jinnangLink {
+  width: 7.725rem;
+  height: 5.2rem;
+  display: block;
+  margin-top: 1rem;
+}
+.container .page1 .jinnangItem {
+  margin-top: 3.5rem;
+}
+.container .page1 .jinnangItem .item {
+  width: 12.9rem;
+  height: 14.225rem;
+  margin: 0 auto;
+  z-index: 4;
+  display: none;
+}
+.container .page1 .jinnangItem .item:nth-child(1) {
+  background: url('../img/baidumap.png') no-repeat;
+  background-size: 12.9rem 14.225rem;
+}
+.container .page1 .jinnangItem .item:nth-child(2) {
+  background: url('../img/baiduyun.png') no-repeat;
+  background-size: 12.9rem 14.225rem;
+}
+.container .page1 .jinnangItem .item:nth-child(3) {
+  background: url('../img/baidugame.png') no-repeat;
+  background-size: 12.9rem 14.225rem;
+}
 .icon_common {
   overflow: hidden;
   width: 7.25rem;

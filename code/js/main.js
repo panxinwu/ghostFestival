@@ -34,6 +34,11 @@
             returnBtn: $('#returnBtn'),
             yesOrNoWrap: $('.yesOrNo'),
             goodOrImportant: $('.goodOrImportant'),
+            story1: $('.story1'),
+            jinnangWrap: $('.jinnangWrap'),
+            jinnangLink: $('.jinnangLink'),
+            threeWrap: $('.threeWrap'),
+            jinnangitem: $('.jinnangItem .item'),
         },
         conf:{
             story:{
@@ -62,8 +67,23 @@
             _pri.node.tishi3.on('click', _pri.util.zhoubianStart);
             _pri.node.questionBtn.on('click', _pri.util.answerStart);
             _pri.node.returnBtn.on('click', _pri.util.returnStory);
+            _pri.node.jinnangBtn.on('click', _pri.util.jinnangFun);
+            _pri.node.jinnangLink.on('click', _pri.util.jinnangShow);
         },
         util:{
+            jinnangShow: function(){
+                $(_pri.node.jinnangitem[$(this).data('num')]).css('display','block');
+                $(_pri.node.threeWrap).hide();
+            },
+            jinnangFun: function(){
+                _pri.util.hideAllStory();
+                $(_pri.node.jinnangWrap).show();
+                $(_pri.node.jinnangitem).hide();
+                $(_pri.node.threeWrap).show();
+            },
+            hideAllStory: function(){
+                $(_pri.node.story1).hide()
+            },
             returnStory: function(){
                 $(_pri.node.yesOrNoWrap).hide();
                 $(_pri.node.goodOrImportant).hide();
