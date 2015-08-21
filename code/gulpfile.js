@@ -26,7 +26,7 @@ gulp.task('stylesheets',['build-less'],function() {
 
 // 合并，压缩js文件
 gulp.task('javascripts', function() {
-  gulp.src(['./js/zepto.min.js','./js/touch.js','./js/fx.js','./js/rem.min2.js','./js/halo.15.01.js'])
+  gulp.src(['./js/zepto.min.js','./js/touch.js','./js/fx.js','./js/rem.min.js','./js/halo.15.01.js'])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('./dest/js'))
     .pipe(rename({ suffix: '.min' }))
@@ -44,7 +44,7 @@ gulp.task('sharejavascripts', function() {
 });
 // 清空图片、样式、js
 gulp.task('clean', function() {
-  return gulp.src(['./index.min.css','./index.css'], {read: false})
+  return gulp.src(['./index.min.css','./index.css'], {read: true})
     .pipe(clean({force: true}));
 });
 

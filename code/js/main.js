@@ -39,6 +39,25 @@
             jinnangLink: $('.jinnangLink'),
             threeWrap: $('.threeWrap'),
             jinnangitem: $('.jinnangItem .item'),
+            answering: $('.answering'),
+            answerlose: $('.answerlose'),
+            answersuccess: $('.answersuccess'),
+            questionItem: $('.questionItem'),
+            continueBtn: $('#continueBtn'),
+            finalAnswer: $('.finalAnswer'),
+            finalAnswerLink: $('.finalAnswerLink'),
+            loseimg: $('.loseimg'),
+            succimg: $('.succimg'),
+            shareBtn: $('#shareBtn'),
+            finalResultBtn: $('#finalResultBtn'),
+            lastlogo: $('.lastlogo'),
+            ansLogo: $('.ansLogo'),
+            questionWrap: $('.questionWrap'),
+            loseOrSucc: $('.loseOrSucc'),
+            lastimg: $('.lastimg'),
+            nextBtn: $('.nextBtn'),
+            shareWrap: $('.shareWrap'),
+            loseShareBtn: $('.loseShareBtn'),
         },
         conf:{
             story:{
@@ -46,6 +65,7 @@
                 keyword2:0,
             },
             again:0,
+            answerjinnang:0,
             answer:[
                 [0,1,0,0],
                 [0,1,1,1],
@@ -58,6 +78,9 @@
                 [1,0,2,0],
                 [0,0,0,0]
             ],
+            finalAnswer:[2,3,1],
+            ansnum:0,
+            bool:1,
         },
         bindUI: function(){
             _pri.node.startBtn.on('click', _pri.util.startFun);
@@ -69,31 +92,135 @@
             _pri.node.returnBtn.on('click', _pri.util.returnStory);
             _pri.node.jinnangBtn.on('click', _pri.util.jinnangFun);
             _pri.node.jinnangLink.on('click', _pri.util.jinnangShow);
+            _pri.node.answerBtn.on('click', _pri.util.answerFun);
+            _pri.node.continueBtn.on('click', _pri.util.continueFun);
+            _pri.node.finalAnswerLink.on('click', _pri.util.finalAnswer);
+            _pri.node.shareBtn.on('click', _pri.util.share);
+            _pri.node.finalResultBtn.on('click', _pri.util.finalResult);
+            _pri.node.shareWrap.on('click', _pri.util.hideShare);
+            _pri.node.loseShareBtn.on('click', _pri.util.share);
         },
         util:{
+            hideShare: function(){
+                $(this).hide();
+            },
+            share: function(){
+                $(_pri.node.shareWrap).show();
+            },
+            finalResult: function(){
+                $(this).hide();
+                $(_pri.node.ansLogo).hide();
+                $(_pri.node.loseOrSucc).hide();
+                $(_pri.node.returnBtn).hide();
+                $(_pri.node.lastlogo).css('display','block');
+                $(_pri.node.lastimg).css('display','block');
+                $(_pri.node.nextBtn).css('display','block');
+            },
+            finalAnswer: function(){
+                if(_pri.conf.ansnum === 2){
+                    $(_pri.node.answering).hide();
+                    $(_pri.node.questionItem).hide();
+                    $(_pri.node.jinnangBtn).hide();
+                    if(_pri.conf.bool === 0){
+                        $(_pri.node.answerlose).css('display','block');
+                        $(_pri.node.loseimg).css('display','block');
+                        $(_pri.node.loseShareBtn).css('display','block');
+                        _pri.conf.ansnum = 0;
+                        _pri.conf.bool = 1;
+                    }else{
+                        $(_pri.node.answersuccess).css('display','block');
+                        $(_pri.node.succimg).css('display','block');
+                        $(_pri.node.shareBtn).show();
+                        $(_pri.node.finalResultBtn).show();
+                    }
+                    return;
+                }
+                if($(this).data('num') != _pri.conf.finalAnswer[_pri.conf.ansnum]){
+                    _pri.conf.bool = 0;
+                }
+                _pri.conf.ansnum++;
+                $(_pri.node.questionItem).hide();
+                $(_pri.node.questionItem[_pri.conf.ansnum]).show();
+            },
+            continueFun: function(){
+                $(this).hide();
+                $(_pri.node.jinnangWrap).hide();
+                $(_pri.node.finalAnswer).show();
+                $(_pri.node.answering).css('display','block');
+                $(_pri.node.jinnangBtn).show();
+                $(_pri.node.returnBtn).show();
+
+            },
+            answerFun: function(){
+                _pri.conf.answerjinnang = 1;
+                $(_pri.node.story1).hide();
+                $(_pri.node.jinnangWrap).hide();
+                $(this).hide();
+                _pri.util.hideAllStory();
+                $(_pri.node.answering).show();
+                $(_pri.node.questionWrap).show();
+                $(_pri.node.returnBtn).show().css('left','78%');
+                $(_pri.node.jinnangBtn).show();
+                $(_pri.node.answering).css('display','block');
+                $(_pri.node.questionItem[_pri.conf.ansnum]).show();
+            },
             jinnangShow: function(){
                 $(_pri.node.jinnangitem[$(this).data('num')]).css('display','block');
                 $(_pri.node.threeWrap).hide();
             },
             jinnangFun: function(){
-                _pri.util.hideAllStory();
-                $(_pri.node.jinnangWrap).show();
-                $(_pri.node.jinnangitem).hide();
-                $(_pri.node.threeWrap).show();
+                $(_pri.node.answerBtn).hide();
+                $(_pri.node.answering).hide();
+                if(!_pri.conf.answerjinnang){
+                    $(this).hide();
+                    $(_pri.node.returnBtn).show().css('left','55%');
+                    _pri.util.hideAllStory();
+                    $(_pri.node.jinnangWrap).show();
+                    $(_pri.node.jinnangitem).hide();
+                    $(_pri.node.threeWrap).show();
+                }else{
+                    $(this).hide();
+                    $(_pri.node.finalAnswer).hide();
+                    $(_pri.node.continueBtn).css('display','block');
+                    _pri.util.hideAllStory();
+                    $(_pri.node.returnBtn).hide();
+                    $(_pri.node.jinnangWrap).show();
+                    $(_pri.node.jinnangitem).hide();
+                    $(_pri.node.threeWrap).show();
+
+                }
             },
             hideAllStory: function(){
-                $(_pri.node.story1).hide()
+                $(_pri.node.story1).hide();
             },
             returnStory: function(){
+                _pri.conf.answerjinnang = 0;
+                $(_pri.node.dotItem2).show();
+                $(_pri.node.answerBtn).show();
+                $(this).hide();
+                $(_pri.node.answerlose).hide();
+                $(_pri.node.loseShareBtn).hide();
+                $(_pri.node.loseimg).hide();
+                $(_pri.node.loseimg).show();
+                $(_pri.node.story1).show();
+                $(_pri.node.jinnangBtn).show();
+                $(_pri.node.dot).show();
+                $(_pri.node.jinnangWrap).show();
                 $(_pri.node.yesOrNoWrap).hide();
                 $(_pri.node.goodOrImportant).hide();
                 $(_pri.node.answerWrap).hide();
                 $(_pri.node.kuangWrap).show();
-                $(_pri.node.dotWrap ).show();
+                $(_pri.node.dotWrap).show();
                 _pri.util.hideAll();
+                if(_pri.conf.answerjinnang){
+                    $(_pri.node.returnBtn).hide();
+                }
             },
             answerStart: function(){
                 $(this).hide();
+                $(_pri.node.issue).hide();
+                $(_pri.node.good).hide();
+                $(_pri.node.important).hide();
                 $(_pri.node.questionWrap).hide();
                 $(_pri.node.answerWrap).show();
                 $(_pri.node.returnBtn).show();
@@ -115,9 +242,9 @@
             yesOrNo: function(){
                 $(_pri.node.yesOrNoWrap).show();
                 if(_pri.conf.answer[_pri.conf.story.keyword1-1][_pri.conf.story.keyword2-1]){
-                    $(_pri.node.yes).show();
+                    $(_pri.node.yes).show().addClass('printshake2');
                 }else{
-                    $(_pri.node.no).show();
+                    $(_pri.node.no).show().addClass('printshake2');
                 }
             },
             goodOrImportant: function(){
@@ -134,25 +261,36 @@
                 switch(_pri.conf.story.keyword1){
                     case 1:
                         $(_pri.node.answer[0]).show();
-                        $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).css('display','block');
+                        var clock = setTimeout(function(){
+                            $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                        },1000);
                         break;
                     case 2:
                         $(_pri.node.answer[1]).show();
-                        $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).css('display','block');
+                        var clock = setTimeout(function(){
+                            $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                        },1000);
 
                         break;
                     case 3:
                         $(_pri.node.answer[2]).show();
-                        $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).css('display','block');
+                        var clock = setTimeout(function(){
+                            $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                        },1000);
+
                         break;
                     case 4:
                         $(_pri.node.answer[3]).show();
-                        $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).css('display','block');
+                        var clock = setTimeout(function(){
+                            $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                        },1000);
+
                         break;
                 }
             },
             zhoubianStart: function(){
                 $(this).hide();
+                $(_pri.node.dotItem2).show();
                 $(_pri.node.dot2Wrap).show();
             },
             questionStart: function(){
@@ -167,6 +305,7 @@
             keywordShow: function(){
                 _pri.conf.story.keyword1 = $(this).data('num');
                 $(_pri.node.jinnangBtn).hide();
+                $(_pri.node.returnBtn).show().css('left','37%');
                 $(_pri.node.returnBtn).show();
                 $(_pri.node.kuangWrap).hide();
                 $(_pri.node.dotWrap).hide();
@@ -222,39 +361,49 @@
                 $(_pri.node.dot).show();
             },
             lighttoggle: function(){
+                var lightClock = setTimeout(function(){
+                    $(_pri.node.bgLight).animate({
+                        opacity: 1,
+                    }, 500, 'ease-out',function(){
+                        $(_pri.node.bgLight).animate({opacity: 0,},400,'ease-out');
+                    });
+                },1000);
                var lightClock = setInterval(function(){
                    $(_pri.node.bgLight).animate({
                        opacity: 1,
-                   }, 500, 'ease-out',function(){
-                       $(_pri.node.bgLight).animate({opacity: 0,},700,'ease-out');
+                   }, 1000, 'ease-out',function(){
+                       $(_pri.node.bgLight).animate({opacity: 0,},1000,'ease-out');
                    });
-                },1500);
+                },3000);
             },
             startFun: function(){
                 $(_pri.node.page0).hide();
                 $(_pri.node.page1).show();
+                var lightClock = setTimeout(function(){
+                    $(_pri.node.styry1Img).animate({
+                        opacity: 1,
+                    }, 500, 'ease-out');
+                },3500);
                 var clock = setTimeout(function(){
                         var i = 0;
                         var clock2 = setInterval(function(){
-                            console.log(i);
                             $(_pri.node.line[i++]).addClass('slowShow');
                             if(i == 9)
                             {
                                 $(_pri.node.dotWrap).show().addClass('printshake');
                                 var clock3 = setTimeout(function(){
                                     $(_pri.node.tishi1).show().addClass('printshake');
-                                },1000);
+                                },700);
                                 clearInterval(clock2);
                             }
-                        },500);
+                        },700);
                 },3500);
 
                 var clock = setTimeout(function(){
                     $(_pri.node.jinnangBtn).show();
                     $(_pri.node.answerBtn).show();
                     $(_pri.node.feiye).hide();
-                    $(_pri.node.styry1Img).css('visibility','visible');
-                },3000);
+                },3500);
              },
         },
     }
