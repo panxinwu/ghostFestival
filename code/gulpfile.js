@@ -44,7 +44,7 @@ gulp.task('sharejavascripts', function() {
 });
 // 清空图片、样式、js
 gulp.task('clean', function() {
-  return gulp.src(['./index.min.css','./index.css'], {read: true})
+  return gulp.src(['./index.min.css','./index.css'],['./index2.min.css','./index2.css'], {read: true})
     .pipe(clean({force: true}));
 });
 

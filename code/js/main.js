@@ -1,5 +1,56 @@
 (function(){
+    var loadingAni = function(){
+        var i = 0;
+        var clock = setInterval(function(){
+            if(i == 6) clearInterval(clock);
+            $('#loadingimg').css({backgroundSize:'2345/40rem 322/40rem',backgroundPosition:'-' + (335/40*i++) + 'rem 0'});
+        },60);
+    };
 
+    loadingAniClock = setInterval(function(){
+        loadingAni();
+    },360);
+    halo.use('loader', function(m){
+        m.loader([
+            'img/0_bgLight.png',
+            'img/0_cover.png',
+            'img/answer_beibao.png',
+            'img/answer_huochai.png',
+            'img/answer_shamo.png',
+            'img/answer_shiti.png',
+            'commonImg/answertoplogo.png',
+            'img/aquestion1.png',
+            'img/kewwordkuang.png',
+            'img/keywordbeibao.png',
+            'commonImg/btn.png',
+            'img/question1.png',
+            'img/question2.png',
+            'img/question3.png',
+            'img/question4.png',
+            'img/smallfeiye.png',
+            'img/story1.png',
+            'img/story1img.png',
+            'img/successFinal.png',
+            'img/successlogo.png',
+            'commonImg/global_bg.png',
+            'commonImg/globale1_bg.png',
+            'commonImg/lose.png',
+            'commonImg/lose1.png',
+            'commonImg/shareIcon.png',
+            'commonImg/sharelose.png',
+            'commonImg/success.png',
+            'commonImg/yes.png',
+            'commonImg/success1.png',])
+            .loadend(function(percent){
+                $('#percent').html(this.percent);
+            })
+            .complete(function(){
+                var template = $('#template').html();
+                $('#container').html(template);
+                $('#loading').addClass('loadingAni');
+                setTimeout(function(){
+                    $('#loading').css('display','none');
+                },1000);
     var _pri = {
         node:{
             bgLight: $('.bgLight'),
@@ -58,6 +109,13 @@
             nextBtn: $('.nextBtn'),
             shareWrap: $('.shareWrap'),
             loseShareBtn: $('.loseShareBtn'),
+            tishi4: $('.tishi4 .tishi'),
+            shareIcon: $('.shareIcon'),
+            loseshareIcon: $('.loseshareIcon'),
+            continueBtn0: $('.continueBtn0'),
+            numImg: $('.numImg'),
+            chooseNum: $('.chooseNum'),
+            repeatBtn: $('.repeatBtn'),
         },
         conf:{
             story:{
@@ -81,6 +139,7 @@
             finalAnswer:[2,3,1],
             ansnum:0,
             bool:1,
+            succ:0,
         },
         bindUI: function(){
             _pri.node.startBtn.on('click', _pri.util.startFun);
@@ -99,8 +158,34 @@
             _pri.node.finalResultBtn.on('click', _pri.util.finalResult);
             _pri.node.shareWrap.on('click', _pri.util.hideShare);
             _pri.node.loseShareBtn.on('click', _pri.util.share);
+            _pri.node.tishi4.on('click', _pri.util.hideNode);
+            _pri.node.continueBtn0.on('click', _pri.util.storyStart);
+            _pri.node.numImg.on('click', _pri.util.story1Start);
+            _pri.node.repeatBtn.on('click', _pri.util.repeatFun);
         },
         util:{
+            repeatFun: function(){
+                $(this).hide();
+                $(_pri.node.answerBtn).show();
+                $(_pri.node.jinnangBtn).hide();
+                $(_pri.node.returnBtn).show().css('left','37%');
+                $(_pri.node.returnBtn).show();
+                $(_pri.node.kuangWrap).hide();
+                $(_pri.node.dotWrap).hide();
+                $(_pri.node.keyword_other).show();
+                $(_pri.node.dot2Wrap).show();
+                $(_pri.node.yesOrNoWrap).hide();
+                $(_pri.node.goodOrImportant).hide();
+                $(_pri.node.answerWrap).hide();
+                $(_pri.node.questionWrap).show();
+                $(_pri.node.yes).hide();
+                $(_pri.node.no).hide();
+            },
+            story1Start: function(){
+                $(_pri.node.chooseNum).hide();
+                $(_pri.node.page1).css('display','block!important');
+                $(_pri.node.continueBtn0).css('display','block');
+            },
             hideShare: function(){
                 $(this).hide();
             },
@@ -127,11 +212,17 @@
                         $(_pri.node.loseShareBtn).css('display','block');
                         _pri.conf.ansnum = 0;
                         _pri.conf.bool = 1;
+                        $(_pri.node.loseshareIcon).show();
+                        share(1,0);
+
                     }else{
                         $(_pri.node.answersuccess).css('display','block');
                         $(_pri.node.succimg).css('display','block');
                         $(_pri.node.shareBtn).show();
                         $(_pri.node.finalResultBtn).show();
+                        $(_pri.node.shareIcon).show();
+                        _pri.util.ajaxPost();
+                        share(1,1);
                     }
                     return;
                 }
@@ -195,6 +286,8 @@
             },
             returnStory: function(){
                 _pri.conf.answerjinnang = 0;
+                $(_pri.node.loseshareIcon).hide();
+                $(_pri.node.shareIcon).hide();
                 $(_pri.node.dotItem2).show();
                 $(_pri.node.answerBtn).show();
                 $(this).hide();
@@ -209,6 +302,7 @@
                 $(_pri.node.yesOrNoWrap).hide();
                 $(_pri.node.goodOrImportant).hide();
                 $(_pri.node.answerWrap).hide();
+                $(_pri.node.repeatBtn).hide();
                 $(_pri.node.kuangWrap).show();
                 $(_pri.node.dotWrap).show();
                 _pri.util.hideAll();
@@ -223,8 +317,8 @@
                 $(_pri.node.important).hide();
                 $(_pri.node.questionWrap).hide();
                 $(_pri.node.answerWrap).show();
+                $(_pri.node.repeatBtn).show();
                 $(_pri.node.returnBtn).show();
-                $(_pri.node.answerBtn).show();
                 _pri.util.answerFunc();
                 _pri.util.yesOrNo();
                 _pri.util.goodOrImportant();
@@ -242,9 +336,9 @@
             yesOrNo: function(){
                 $(_pri.node.yesOrNoWrap).show();
                 if(_pri.conf.answer[_pri.conf.story.keyword1-1][_pri.conf.story.keyword2-1]){
-                    $(_pri.node.yes).show().addClass('printshake2');
+                    $(_pri.node.yes).show().addClass('slowShow');
                 }else{
-                    $(_pri.node.no).show().addClass('printshake2');
+                    $(_pri.node.no).show().addClass('slowShow');
                 }
             },
             goodOrImportant: function(){
@@ -261,28 +355,32 @@
                 switch(_pri.conf.story.keyword1){
                     case 1:
                         $(_pri.node.answer[0]).show();
+                        $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).show().css('opacity','0');
                         var clock = setTimeout(function(){
-                            $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                            $(_pri.node.ansItem[_pri.conf.story.keyword2-1]).show().addClass('slowShow');
                         },1000);
                         break;
                     case 2:
                         $(_pri.node.answer[1]).show();
+                        $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).show().css('opacity','0');
                         var clock = setTimeout(function(){
-                            $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                            $(_pri.node.ansItem[4+_pri.conf.story.keyword2-1]).show().addClass('slowShow');
                         },1000);
 
                         break;
                     case 3:
                         $(_pri.node.answer[2]).show();
+                        $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).show().css('opacity','0');
                         var clock = setTimeout(function(){
-                            $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                            $(_pri.node.ansItem[8+_pri.conf.story.keyword2-1]).show().addClass('slowShow');
                         },1000);
 
                         break;
                     case 4:
                         $(_pri.node.answer[3]).show();
+                        $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).show().css('opacity','0');
                         var clock = setTimeout(function(){
-                            $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).show().addClass('printshake3');
+                            $(_pri.node.ansItem[12+_pri.conf.story.keyword2-1]).show().addClass('slowShow');
                         },1000);
 
                         break;
@@ -376,35 +474,46 @@
                    });
                 },3000);
             },
-            startFun: function(){
-                $(_pri.node.page0).hide();
-                $(_pri.node.page1).show();
-                var lightClock = setTimeout(function(){
-                    $(_pri.node.styry1Img).animate({
-                        opacity: 1,
-                    }, 500, 'ease-out');
-                },3500);
-                var clock = setTimeout(function(){
-                        var i = 0;
-                        var clock2 = setInterval(function(){
-                            $(_pri.node.line[i++]).addClass('slowShow');
-                            if(i == 9)
-                            {
-                                $(_pri.node.dotWrap).show().addClass('printshake');
-                                var clock3 = setTimeout(function(){
-                                    $(_pri.node.tishi1).show().addClass('printshake');
-                                },700);
-                                clearInterval(clock2);
-                            }
-                        },700);
-                },3500);
-
-                var clock = setTimeout(function(){
+            storyStart: function(){
                     $(_pri.node.jinnangBtn).show();
                     $(_pri.node.answerBtn).show();
                     $(_pri.node.feiye).hide();
-                },3500);
+                    $(_pri.node.continueBtn0).hide();
+                    $(_pri.node.styry1Img).animate({
+                        opacity: 1,
+                    }, 500, 'ease-out');
+                    var i = 0;
+                    var clock2 = setInterval(function(){
+                        $(_pri.node.line[i++]).addClass('slowShow');
+                        if(i == 9)
+                        {
+                            $(_pri.node.dotWrap).show().addClass('slowShow');
+                            var clock3 = setTimeout(function(){
+                                $(_pri.node.tishi1).show().addClass('slowShow');
+                            },700);
+                            clearInterval(clock2);
+                        }
+                    },700);
+            },
+            startFun: function(){
+                $(_pri.node.page0).hide();
+                $(_pri.node.page1).show();
+
              },
+            ajaxPost: function(){
+                $.ajax({
+                    type: 'POST',
+                    url:  'http://2015.str.fm/duanwujie/add/',
+                    data: 2,
+                    dataType: 'json',
+                    timeout: 300,
+                    success: function(data){
+                        console.log(data);
+                    },
+                    error: function(xhr, type){
+                    }
+                })
+            },
         },
     }
     init = function(){
@@ -412,5 +521,47 @@
         _pri.util.lighttoggle();
     }
     init();
+    var audio = document.createElement("audio");
+    // audio.src = "./images/bj.mp3";
+    audio.src = "commonImg/mbg3.mp3";
+    audio.autoplay = false;
+    audio.loop = true;
+    audio.addEventListener("canplaythrough",function() {
+        // audio.play();
+        fadeIn();
+        function fadeIn(v) {
+            var v = v || 0.1;
+            audio.volume = v;
+            if((v+=0.1)<=1.0) {
+                setTimeout(function() {
+                    fadeIn(v)
+                },500);
+            }
+        }
+    },false);
+    // 手Q微信需要手动触发播放
+    // var flag = 0;
+    // $('body').on('touchstart', function(event) {
+    //     if(!$(event.target).hasClass('audio_ico')){
+    //         if(flag == 0 && audio.paused){
+    //             audio.play();
+    //             $('.audio_ico').toggleClass('audio_ico_stop');
+    //         }
+    //         flag = 1;
+    //     }
+    // });
+    $('.audio_ico').on('touchend',function(event){
+        event.preventDefault();
+        if($(this).hasClass('audio_ico')){
+            if(audio.paused){
+                audio.play();
+            }else{
+                audio.pause();
+            }
+            $('.audio_ico').toggleClass('audio_ico_stop');
+        }
+    },false);
+    });//end of _pri
 
+    });//end of halo.use
 })();//end of ()

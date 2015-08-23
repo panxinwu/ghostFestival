@@ -91,7 +91,7 @@ textarea {
   -webkit-appearance: none;
 }
 .container {
-  background: url('../img2/global_bg.png') no-repeat;
+  background: url('../commonImg/global_bg.png') no-repeat;
   background-size: 100% 100%;
   width: 100%;
   height: 100%;
@@ -122,10 +122,9 @@ textarea {
   z-index: 2;
 }
 .container .page1 {
-  display: none;
   position: relative;
   z-index: 2;
-  background: url('../img2/globale1_bg.png') no-repeat;
+  background: url('../commonImg/globale1_bg.png') no-repeat;
   background-size: 100% 100%;
   width: 15.7rem;
   height: 21.9rem;
@@ -217,13 +216,13 @@ textarea {
   display: none;
   background: url('../img2/dot.png') no-repeat;
   position: absolute;
-  left: 1.8rem;
-  bottom: 3.3rem;
+  left: -.5rem;
+  top: 9rem;
   z-index: 3;
   margin: 0 auto;
-  background-size: 11.6rem 9.575rem;
-  width: 11.6rem;
-  height: 9.575rem;
+  background-size: 16rem 9.725rem;
+  width: 16rem;
+  height: 9.725rem;
 }
 .container .page1 .story1 .dotWrap .dot {
   width: 1.625rem;
@@ -232,29 +231,29 @@ textarea {
   display: none;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(1) {
-  right: -0.3rem;
-  top: 2rem;
-  height: 3.2rem;
+  right: 1.7rem;
+  top: 4rem;
+  height: 6.2rem;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(2) {
-  right: 1.475rem;
-  top: 2rem;
-  height: 4.875rem;
+  right: 3.475rem;
+  top: 0rem;
+  height: 1.875rem;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(3) {
   right: 3rem;
   top: 6rem;
-  height: 3.55rem;
+  height: 2.55rem;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(4) {
-  right: 4.7rem;
-  top: 0rem;
-  height: 1.45rem;
+  right: 5rem;
+  top: 5rem;
+  height: 2.45rem;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(5) {
-  right: 4.7rem;
-  bottom: 0rem;
-  height: 1.45rem;
+  right: 8.7rem;
+  bottom: 2rem;
+  height: 3.45rem;
 }
 .container .page1 .story1 .dotWrap .dot:nth-child(6) {
   right: 6.7rem;
@@ -262,19 +261,19 @@ textarea {
   height: 1.45rem;
 }
 .container .page1 .story1 .tishiWrap .tishi1 {
-  background: url('../img2/tishi1.png') no-repeat;
+  background: url('../commonImg/tishi1.png') no-repeat;
   display: none;
   background-size: 6rem 8.85rem;
   width: 6rem;
   height: 8.85rem;
   position: absolute;
-  left: 6.3rem;
-  top: 10rem;
+  left: 8.3rem;
+  top: 11.5rem;
   z-index: 4;
 }
 .container .page1 .story1 .tishiWrap .tishi2 {
   display: none;
-  background: url('../img2/tishi2.png') no-repeat;
+  background: url('../commonImg/tishi2.png') no-repeat;
   background-size: 6rem 8.85rem;
   width: 6rem;
   height: 8.85rem;
@@ -285,7 +284,7 @@ textarea {
 }
 .container .page1 .story1 .tishiWrap .tishi3 {
   display: none;
-  background: url('../img2/tishi3.png') no-repeat;
+  background: url('../commonImg/tishi3.png') no-repeat;
   background-size: 6rem 8.85rem;
   width: 6rem;
   height: 8.85rem;
@@ -313,7 +312,7 @@ textarea {
   height: 5.95rem;
   position: absolute;
   left: -2rem;
-  bottom: 4rem;
+  bottom: 4.5rem;
 }
 .container .page1 .story1 .keyword_other .beibao {
   background: url('../img2/keywordbeibao.png') no-repeat;
@@ -321,7 +320,7 @@ textarea {
   display: none;
 }
 .container .page1 .story1 .keyword_other .beibao .circle {
-  background: url('../img2/beibaocircle.png') no-repeat;
+  background: url('../img2/shiticircle.png') no-repeat;
   background-size: 8.975rem 5.95rem;
   width: 8.975rem;
   height: 5.95rem;
@@ -331,18 +330,18 @@ textarea {
   z-index: 4;
 }
 .container .page1 .story1 .keyword_other .huocai {
-  background: url('../img2/keywordhuocai.png') no-repeat;
+  background: url('../img2/keywordshamo.png') no-repeat;
   background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .huocai .circle {
-  background: url('../img2/huochaicircle.png') no-repeat;
+  background: url('../img2/shamocircle.png') no-repeat;
   background-size: 8.975rem 5.95rem;
   width: 8.975rem;
   height: 5.95rem;
   position: absolute;
   left: 2.8rem;
-  top: 0rem;
+  top: .5rem;
   z-index: 4;
 }
 .container .page1 .story1 .keyword_other .shiti {
@@ -357,22 +356,22 @@ textarea {
   height: 5.95rem;
   position: absolute;
   left: 2.8rem;
-  top: 0rem;
+  top: .5rem;
   z-index: 4;
 }
 .container .page1 .story1 .keyword_other .shamo {
-  background: url('../img2/keywordshamo.png') no-repeat;
+  background: url('../img2/keywordhuochai.png') no-repeat;
   background-size: 16rem 5.95rem;
   display: none;
 }
 .container .page1 .story1 .keyword_other .shamo .circle {
-  background: url('../img2/shamocircle.png') no-repeat;
-  background-size: 8.975rem 5.95rem;
-  width: 8.975rem;
-  height: 5.95rem;
+  background: url('../img2/huochaicircle.png') no-repeat;
+  background-size: 16rem 6.575rem;
+  width: 16rem;
+  height: 6.575rem;
   position: absolute;
-  left: 2.8rem;
-  top: 0rem;
+  left: -.2rem;
+  top: -.2rem;
   z-index: 4;
 }
 .container .page1 .story1 .questionWrap .question {
@@ -387,73 +386,81 @@ textarea {
 }
 .container .page1 .story1 .questionWrap .question1 .issue {
   background: url('../img2/question4.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
+  background-size: 16rem 9.55rem;
+  width:3rem;
 }
 .container .page1 .story1 .questionWrap .question1 .issue:nth-child(1) {
-  background-position: -10.2rem 0;
+  background-position: -7.5rem 0;
 }
 .container .page1 .story1 .questionWrap .question1 .issue:nth-child(2) {
-  background-position: -7rem 0;
+  background-position: -10.8rem 0;
+
 }
 .container .page1 .story1 .questionWrap .question1 .issue:nth-child(3) {
-  background-position: -3.5rem 0;
+  background-position: -4.1rem 0;
 }
 .container .page1 .story1 .questionWrap .question1 .issue:nth-child(4) {
-  background-position: 0 0;
+  background-position: -1rem 0;
 }
 .container .page1 .story1 .questionWrap .question2 .issue {
   background: url('../img2/question3.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
+  background-size: 16rem 9.55rem;
 }
 .container .page1 .story1 .questionWrap .question2 .issue:nth-child(1) {
-  background-position: -10.2rem 0;
+  background-position: -11rem 0;
+  width:3rem;
 }
 .container .page1 .story1 .questionWrap .question2 .issue:nth-child(2) {
-  background-position: -7rem 0;
+  background-position: -9.2rem 0;
 }
 .container .page1 .story1 .questionWrap .question2 .issue:nth-child(3) {
-  background-position: -3.5rem 0;
+  background-position: -7.5rem 0;
 }
 .container .page1 .story1 .questionWrap .question2 .issue:nth-child(4) {
-  background-position: 0 0;
+  background-position: -5.8rem 0;
 }
 .container .page1 .story1 .questionWrap .question3 .issue {
-  background: url('../img2/question2.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
+  background: url('../img2/question1.png') no-repeat;
+  background-size: 16rem 9.55rem;
+  width:3rem;
 }
 .container .page1 .story1 .questionWrap .question3 .issue:nth-child(1) {
-  background-position: -10.2rem 0;
+  background-position: -11rem 0;
 }
 .container .page1 .story1 .questionWrap .question3 .issue:nth-child(2) {
-  background-position: -7rem 0;
+  background-position: -7.4rem 0;
 }
 .container .page1 .story1 .questionWrap .question3 .issue:nth-child(3) {
-  background-position: -3.5rem 0;
+  background-position: -4rem 0;
 }
 .container .page1 .story1 .questionWrap .question3 .issue:nth-child(4) {
-  background-position: 0 0;
+  background-position: -.6rem 0;
 }
 .container .page1 .story1 .questionWrap .question4 .issue {
-  background: url('../img2/question1.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
+  background: url('../img2/question2.png') no-repeat;
+  background-size: 16rem 9.55rem;
 }
 .container .page1 .story1 .questionWrap .question4 .issue:nth-child(1) {
-  background-position: -10.2rem 0;
+  background-position: -12.5rem 0;
 }
 .container .page1 .story1 .questionWrap .question4 .issue:nth-child(2) {
-  background-position: -7rem 0;
+  background-position: -9.2rem 0;
+  width:3rem;
 }
 .container .page1 .story1 .questionWrap .question4 .issue:nth-child(3) {
-  background-position: -3.5rem 0;
+  background-position: -5.8rem 0;
+  width:3rem;
 }
 .container .page1 .story1 .questionWrap .question4 .issue:nth-child(4) {
-  background-position: 0 0;
+  background-position: -2.8rem 0;
+  width:3rem;
 }
 .container .page1 .story1 .answerWrap .answer {
   margin-top: 1rem;
   display: none;
 }
 .container .page1 .story1 .answerWrap .answer .ansItem {
+  display:block;
   opacity: 0;
   width: 3rem;
   height: 9.35rem;
@@ -461,33 +468,34 @@ textarea {
   margin-right: 2rem;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem {
-  background: url('../img2/answer_shamo.png') no-repeat;
-  background-size: 11.5rem 9.35rem;
-}
-.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(1) {
-  background-position: -9.4rem 0;
-}
-.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(2) {
-  background-position: -5.2rem 0;
-}
-.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(3) {
-  background-position: -1.5rem 0;
-}
-.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(4) {
-  background-position: 1rem 0;
-}
-.container .page1 .story1 .answerWrap .answer2 .ansItem {
   background: url('../img2/answer_shiti.png') no-repeat;
   background-size: 11.5rem 9.35rem;
 }
-.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(1) {
-  background-position: -8.2rem 0;
-}
-.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(2) {
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(1) {
   background-position: -5.2rem 0;
 }
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(2) {
+  background-position: -9.4rem 0;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(3) {
+  background-position: -5.2rem 0;
+}
+.container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(4) {
+  background-position: -1.8rem 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem {
+  background: url('../img2/answer_shamo.png') no-repeat;
+  background-size: 11.5rem 9.35rem;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(1) {
+  background-position: -8.6rem 0;
+}
+.container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(2) {
+  background-position: -6.8rem 0;
+  width:1.5rem;
+}
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(3) {
-  background-position: -3rem 0;
+  background-position: -3.3rem 0;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(4) {
   background-position: 0 0;
@@ -497,31 +505,32 @@ textarea {
   background-size: 11.5rem 9.35rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(1) {
-  background-position: -6.7rem 0;
-  width: 5rem;
+  background-position: -8.6rem 0;
+  width: 3rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(2) {
-  background-position: -4.5rem 0;
-  width: 2rem;
+  background-position: -5.2rem 0;
+  width: 3rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(3) {
-  background-position: -1.5rem 0;
+  background-position: -3rem 0;
+  width:2rem;
 }
 .container .page1 .story1 .answerWrap .answer3 .ansItem:nth-child(4) {
-  background-position: 2rem 0;
+  background-position:0 0;
 }
 .container .page1 .story1 .answerWrap .answer4 .ansItem {
   background: url('../img2/answer_beibao.png') no-repeat;
   background-size: 11.5rem 9.35rem;
 }
 .container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(1) {
-  background-position: -9.2rem 0;
+  background-position: -10.2rem 0;
 }
 .container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(2) {
-  background-position: -6rem 0;
+  background-position: -6.6rem 0;
 }
 .container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(3) {
-  background-position: -2.5rem 0;
+  background-position: -3.3rem 0;
 }
 .container .page1 .story1 .answerWrap .answer4 .ansItem:nth-child(4) {
   background-position: 0 0;
@@ -544,7 +553,7 @@ textarea {
 }
 .container .page1 .story1 .yesOrNo .yes {
   margin: 2rem 1rem;
-  background: url('../img2/yes.png') no-repeat;
+  background: url('../commonImg/yes.png') no-repeat;
   float: right;
   background-size: 4.225rem 4.2rem;
   width: 4.225rem;
@@ -553,7 +562,7 @@ textarea {
 }
 .container .page1 .story1 .yesOrNo .no {
   margin: 2rem 1rem;
-  background: url('../img2/no.png') no-repeat;
+  background: url('../commonImg/no.png') no-repeat;
   float: right;
   background-size: 4.225rem 4.2rem;
   width: 4.225rem;
@@ -565,14 +574,14 @@ textarea {
   left: 2rem;
 }
 .container .page1 .story1 .goodOrImportant .good {
-  background: url('../img2/miaozai.png') no-repeat;
+  background: url('../commonImg/miaozai.png') no-repeat;
   background-size: 2.1rem 3.1rem;
   width: 2.1rem;
   height: 3.1rem;
   display: none;
 }
 .container .page1 .story1 .goodOrImportant .important {
-  background: url('../img2/zhongyao.png') no-repeat;
+  background: url('../commonImg/zhongyao.png') no-repeat;
   background-size: 2.275rem 3.55rem;
   width: 2.275rem;
   height: 3.55rem;
@@ -626,15 +635,15 @@ textarea {
   display: none;
 }
 .container .page1 .finalAnswer .ansLogo .answering {
-  background: url('../img2/answertoplogo.png') no-repeat;
+  background: url('../commonImg/answertoplogo.png') no-repeat;
   background-size: 12.85rem 8.6rem;
 }
 .container .page1 .finalAnswer .ansLogo .answerlose {
-  background: url('../img2/lose.png') no-repeat;
+  background: url('../commonImg/lose.png') no-repeat;
   background-size: 12.85rem 8.6rem;
 }
 .container .page1 .finalAnswer .ansLogo .answersuccess {
-  background: url('../img2/success.png') no-repeat;
+  background: url('../commonImg/success.png') no-repeat;
   background-size: 12.85rem 8.6rem;
 }
 .container .page1 .finalAnswer .lastWrap i {
@@ -674,6 +683,9 @@ textarea {
   float: right;
 }
 .container .page1 .finalAnswer .questionWrap .questionItem .finalAnswerLink:nth-child(1) {
+  margin-right: 4.8rem;
+}
+.container .page1 .finalAnswer .questionWrap .questionItem:nth-child(2) .finalAnswerLink:nth-child(1) {
   margin-right: 6.8rem;
 }
 .container .page1 .finalAnswer .questionWrap .questionItem:nth-child(1) {
@@ -699,11 +711,11 @@ textarea {
   display: none;
 }
 .container .page1 .finalAnswer .loseOrSucc .loseimg {
-  background: url('../img2/lose1.png') no-repeat;
+  background: url('../commonImg/lose1.png') no-repeat;
   background-size: 16rem 8.025rem;
 }
 .container .page1 .finalAnswer .loseOrSucc .succimg {
-  background: url('../img2/success1.png') no-repeat;
+  background: url('../commonImg/success1.png') no-repeat;
   background-size: 16rem 9.9rem;
 }
 .shareWrap {
@@ -717,19 +729,86 @@ textarea {
   display: none;
 }
 .shareWrap .shareIcon {
-  background: url('../img2/shareIcon.png') no-repeat;
+  background: url('../commonImg/shareIcon.png') no-repeat;
   background-size: 5.8rem 21.625rem;
   width: 5.8rem;
   height: 21.625rem;
-  display: block;
+  display: none;
   float: right;
   margin-top: -3rem;
+}
+.shareWrap .loseshareIcon {
+  background: url('../commonImg/sharelose.png') no-repeat;
+  background-size: 4.975rem 13.25rem;
+  width: 4.975rem;
+  height: 13.25rem;
+  display: none;
+  float: right;
+  margin-top: -3rem;
+}
+.chooseNumWrap .page0 {
+  display: none;
+}
+.chooseNumWrap .page1 {
+  display: none;
+}
+.chooseNumWrap .chooseNum {
+  background: url('../commonImg/globale1_bg.png') no-repeat;
+  background-size: 15.575rem 21.4rem;
+  margin-top: 1rem;
+  height: 100%;
+  padding-top: 5rem;
+  padding-right: 2.5rem;
+}
+.chooseNumWrap .chooseNum .numImg {
+  background: url('../img2/smallfeiye.png') no-repeat;
+  background-size: 10.725rem 9.975rem;
+  display: block;
+  float: right;
+  margin-right: .5rem;
+}
+.chooseNumWrap .chooseNum .numImg .msk {
+  background: url('../img2/weikaiqi.png') no-repeat;
+  background-size: 2.475rem 7.4rem;
+  width: 2.475rem;
+  height: 7.4rem;
+  display: block;
+  margin-top: 2.1rem;
+  margin-left: .2rem;
+}
+.chooseNumWrap .chooseNum .num {
+  width: 3rem;
+  height: 9.975rem;
+  background-position: 0 0;
+}
+.chooseNumWrap .chooseNum .num:nth-child(1) {
+  background-position: -7.8rem 0;
+}
+.chooseNumWrap .chooseNum .num:nth-child(2) {
+  background-position: -4rem 0;
+}
+.chooseNumWrap .tishi4 .tishi {
+  background: url('../commonImg/tishi4.png') no-repeat;
+  display: block;
+  background-size: 7.9rem 9.275rem;
+  width: 7.9rem;
+  height: 9.275rem;
+  position: absolute;
+  left: 2rem;
+  top: 7rem;
+  z-index: 4;
+}
+.chooseNum3 .chooseNum .numImg .msk {
+  display: none;
+}
+.chooseNum3 .tishi4 .tishi {
+  display: none;
 }
 .icon_common {
   overflow: hidden;
   width: 7.25rem;
   height: 50rem;
-  background: url('../img2/btn.png');
+  background: url('../commonImg/btn.png');
   background-size: 7.25rem 50rem;
   position: relative;
   background-position: -99999px -99999px;
@@ -803,6 +882,20 @@ textarea {
   top: 21.8rem;
   z-index: 1;
 }
+.chooseNumWrap .btnWrap .continueBtn0 {
+  display: none;
+}
+.continueBtn0 {
+  width: 5.15rem;
+  height: 3.15rem;
+  background-position: 0 -14.25rem;
+  display: block;
+  position: absolute;
+  left: 55%;
+  margin-left: -3.5rem;
+  top: 21.8rem;
+  z-index: 0;
+}
 .shareBtn {
   width: 5.65rem;
   height: 2.425rem;
@@ -855,8 +948,27 @@ textarea {
   position: absolute;
   left: 78%;
   margin-left: -3.5rem;
-  top: 22.2rem;
+  top: 22.4rem;
   z-index: 1;
+}
+.audio_ico {
+  position: absolute;
+  top: .4rem;
+  z-index: 5;
+  width: 3.075rem;
+  height: 1.65rem;
+  right: .2rem;
+  background: url('../commonImg/audio_icon.png') no-repeat;
+  background-size: 3.075rem 1.65rem;
+}
+.audio_ico_stop {
+  background: url('../commonImg/audio_icon_stop.png') no-repeat;
+  background-size: 3.075rem 1.65rem;
+  width: 3.075rem;
+  height: 1.65rem;
+}
+.loaded .audio_ico {
+  opacity: 1!important;
 }
 .slowShow {
   opacity: 1;
@@ -875,6 +987,47 @@ textarea {
 }
 .printshake3 {
   -webkit-animation: print ease 0.5s 3s, shaking linear 0.2s 1s forwards;
+}
+.loading {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+  background-size: 100% 100%;
+}
+.loading .loadingInner {
+  margin-top: 8rem;
+  position: relative;
+}
+.loading .loadingInner .talkWrap {
+  position: absolute;
+  left: 50%;
+  margin-left: -4.6rem;
+  top: -4.5rem;
+  background-size: 9.4rem 25.5rem;
+  width: 9.4rem;
+  height: 3.95rem;
+  display: block;
+  background-position: 0 -21.175rem;
+}
+.loading .loadingInner .loadingimg {
+  margin: 0 auto;
+  background: url('../commonImg/loading.png') no-repeat;
+  background-size: 58.625rem 8.05rem;
+  width: 8.375rem;
+  height: 8.05rem;
+  display: block;
+  background-position: 0 0;
+}
+.loading .loadingInner .percent {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  display: block;
+  color: #345AB2;
+  margin-top: -1rem;
 }
 @-webkit-keyframes print {
   0% {

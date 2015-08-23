@@ -9,14 +9,24 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css?v=1.3" />
 </head>
 <body>
-	<section class="container">
+<section id="loading" class="loading">
+	<section class="loadingInner">
+		<i id="talkWrap" class="talkWrap"></i>
+		<i id="loadingimg" class="loadingimg"></i>
+		<i id="percent" class="percent">0%</i>
+	</section>
+</section>
+<!--add chooseNumWrap chooseNum3-->
+	<section id="container" class="container">
+		<script id="template" type="x-tmpl-mustache">
+		<a href="javascript:;" class="audio_ico audio_ico_stop"></a>
 		<section class="page0">
 			<section class="bgLight"></section>
 			<section class="cover"></section>
 			<a id='startBtn' href="javascript:void(0)" class="icon_common start_btn"></a>
 		</section>
 		<section class="page1">
-			<section class="feiye printshake"></section>
+			<section class="feiye slowShow"></section>
 			<section class="story1">
 				<img src="img/story1img.png" alt="" class="styry1Img"/>
 				<section class="kuangWrap">
@@ -171,15 +181,26 @@
 			<a id='jinnangBtn' href="javascript:void(0)" class="icon_common jinnangBtn"></a>
 			<a id='answerBtn' href="javascript:void(0)" class="icon_common answerBtn"></a>
 			<a id='continueBtn' href="javascript:void(0)" class="icon_common continueBtn"></a>
+			<a id='continueBtn0' href="javascript:void(0)" class="icon_common continueBtn0"></a>
 			<a id='shareBtn' href="javascript:void(0)" class="icon_common shareBtn"></a>
 			<a id='finalResultBtn' href="javascript:void(0)" class="icon_common finalResultBtn"></a>
-			<a id='nextBtn' href="javascript:void(0)" class="icon_common nextBtn"></a>
+			<a id='nextBtn' href="index2.html" class="icon_common nextBtn"></a>
 			<a id='loseShareBtn' href="javascript:void(0)" class="icon_common loseShareBtn"></a>
 			<a id='repeatBtn' href="javascript:void(0)" class="icon_common repeatBtn"></a>
 		</section>
 		<section class="shareWrap">
 			<i class="shareIcon"></i>
+			<i class="loseshareIcon"></i>
 		</section>
+		<section class="chooseNum">
+			<a href="javascript:void(0)" class="num numImg"></a>
+			<a href="index2.html" class="num numImg"></i></a>
+			<a href="index3.html" class="num numImg"><i class="msk"></i></a>
+		</section>
+		<section class="tishi4">
+			<i class="tishi"></i>
+		</section>
+		</script>
 	</section>
 	<script src="dest/js/all.js"></script>
 	<script src="js/main.js?V=1.3"></script>
