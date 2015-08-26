@@ -114,8 +114,17 @@
             loseshareIcon: $('.loseshareIcon'),
             continueBtn0: $('.continueBtn0'),
             numImg: $('.numImg'),
+            num1: $('.num1'),
             chooseNum: $('.chooseNum'),
+            num: $('.chooseNum .num'),
             repeatBtn: $('.repeatBtn'),
+            tishi5: $('.tishi5'),
+            tishiNum: $('.tishi7 .num'),
+            duihao: $('.duihao'),
+            tishi6: $('.tishi6'),
+            container: $('#container'),
+            prevent: $('.prevent'),
+            loseShareBtn1: $('#loseShareBtn1')
         },
         conf:{
             story:{
@@ -140,6 +149,10 @@
             ansnum:0,
             bool:1,
             succ:0,
+            jinnangFirst:0,
+            jinnangLength:0,
+            list1:[],
+            list2:[]
         },
         bindUI: function(){
             _pri.node.startBtn.on('click', _pri.util.startFun);
@@ -160,10 +173,81 @@
             _pri.node.loseShareBtn.on('click', _pri.util.share);
             _pri.node.tishi4.on('click', _pri.util.hideNode);
             _pri.node.continueBtn0.on('click', _pri.util.storyStart);
-            _pri.node.numImg.on('click', _pri.util.story1Start);
+            _pri.node.num1.on('click', _pri.util.story1Start);
             _pri.node.repeatBtn.on('click', _pri.util.repeatFun);
+            _pri.node.tishi5.on('click', _pri.util.hideNode);
+            _pri.node.tishi6.on('click', _pri.util.hideNode);
+            _pri.node.loseShareBtn1.on('click', _pri.util.loseShare);
         },
         util:{
+            loseShare: function() {
+                $(_pri.node.shareWrap).show();
+                $(_pri.node.loseshareIcon).show();
+            },
+            getJinnnangData: function(){
+                $.ajax({
+                    type: 'POST',
+                    url:  '/loadUsedTips',
+                    data: 2,
+                    dataType: 'jsonp',
+                    success: function(data){
+                        data = [10,20,30];
+                        _pri.util.jinnangFun2(data);
+                    },
+                    error: function(data){
+                        data = [12,13,23];
+                        _pri.util.jinnangFun2(data);
+                    }
+                })
+            },
+            jinnangFun2: function(data){
+                var list1 = [],
+                    list2 = [];
+                var length = _pri.conf.jinnangLength = data.length;
+                console.log(length);
+                if(3 === length){
+                    $(_pri.node.returnBtn).css('left','37%');
+                    $(_pri.node.loseShareBtn1).css('display','block');
+                }
+                for(var i=0;i < length;i++){
+                    list1[i] = parseInt(data[i]/10);
+                    list2[i] = Math.ceil(data[i]%10);
+                }
+                _pri.conf.list1 = list1;
+                _pri.conf.list2 = list2;
+                switch (length){
+                    case 1:
+                        $(_pri.node.tishiNum[2]).show();
+                        $(_pri.node.tishiNum[3]).hide();
+                        break;
+                    case 2:
+                        $(_pri.node.tishiNum[1]).show();
+                        $(_pri.node.tishiNum[3]).hide();
+                        break;
+                    case 3:
+                        $(_pri.node.tishiNum[0]).show();
+                        $(_pri.node.tishiNum[3]).hide();
+                        break;
+                }
+                for(var i=0;i < length; i++){
+                    if(list1[i] === 1){
+                        $($(_pri.node.duihao[list2[i]-1])[0]).css('display','block');
+                        $($(_pri.node.duihao[list2[i]-1])[0]).addClass('cur');
+                    }
+                }
+            },
+            addJingnangData: function(){
+                    $.ajax({
+                        type: 'POST',
+                        url:  '/addTip',
+                        data: 2,
+                        dataType: 'jsonp',
+                        success: function(data){
+                        },
+                        error: function(data){
+                        }
+                    })
+            },
             repeatFun: function(){
                 $(this).hide();
                 $(_pri.node.answerBtn).show();
@@ -181,7 +265,7 @@
                 $(_pri.node.yes).hide();
                 $(_pri.node.no).hide();
             },
-            story1Start: function(){
+            story1Start: function(e){
                 $(_pri.node.chooseNum).hide();
                 $(_pri.node.page1).css('display','block!important');
                 $(_pri.node.continueBtn0).css('display','block');
@@ -256,10 +340,26 @@
                 $(_pri.node.questionItem[_pri.conf.ansnum]).show();
             },
             jinnangShow: function(){
-                $(_pri.node.jinnangitem[$(this).data('num')]).css('display','block');
-                $(_pri.node.threeWrap).hide();
+                if(_pri.conf.jinnangLength === 3){
+                    if($(this).children().hasClass('cur')){
+                        $(_pri.node.jinnangitem[$(this).data('num')]).css('display','block');
+                        $(_pri.node.threeWrap).hide();
+                    }else{
+                     $(_pri.node.tishi6).css('display','block');
+                    }
+                }else{
+                    var num = '1' + $(this).data('num');
+                    $(_pri.node.jinnangitem[$(this).data('num')]).css('display','block');
+                    $(_pri.node.threeWrap).hide();
+                    _pri.util.addJingnangData(num);
+                }
             },
             jinnangFun: function(){
+                _pri.util.getJinnnangData();
+                if(!_pri.conf.jinnangFirst){
+                    $(_pri.node.tishi5).show();
+                }
+                _pri.conf.jinnangFirst = 1;
                 $(_pri.node.answerBtn).hide();
                 $(_pri.node.answering).hide();
                 if(!_pri.conf.answerjinnang){
@@ -287,7 +387,10 @@
             returnStory: function(){
                 _pri.conf.answerjinnang = 0;
                 $(_pri.node.loseshareIcon).hide();
+                $(_pri.node.loseShareBtn1).hide();
+                $(_pri.node.tishi5).hide();
                 $(_pri.node.shareIcon).hide();
+                $(_pri.node.dot2Wrap).hide();
                 $(_pri.node.dotItem2).show();
                 $(_pri.node.answerBtn).show();
                 $(this).hide();
@@ -487,7 +590,7 @@
                         $(_pri.node.line[i++]).addClass('slowShow');
                         if(i == 9)
                         {
-                            $(_pri.node.dotWrap).show().addClass('slowShow');
+                            $(_pri.node.dotWrap).show().addClass('slowShow2');
                             var clock3 = setTimeout(function(){
                                 $(_pri.node.tishi1).show().addClass('slowShow');
                             },700);
@@ -498,7 +601,7 @@
             startFun: function(){
                 $(_pri.node.page0).hide();
                 $(_pri.node.page1).show();
-
+                $(_pri.node.prevent).css('display','block');
              },
             ajaxPost: function(){
                 $.ajax({
@@ -508,7 +611,6 @@
                     dataType: 'json',
                     timeout: 300,
                     success: function(data){
-                        console.log(data);
                     },
                     error: function(xhr, type){
                     }

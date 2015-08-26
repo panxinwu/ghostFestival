@@ -110,6 +110,11 @@
             loseshareIcon: $('.loseshareIcon'),
             continueBtn0: $('.continueBtn0'),
             repeatBtn: $('.repeatBtn'),
+            jinnangFirst: 0,
+            tishi5: $('.tishi5'),
+            continueBtn1: $('.continueBtn1'),
+            lastimg: $('.lastimg'),
+            lastimg2: $('.lastimg2'),
         },
         conf:{
             story:{
@@ -155,6 +160,8 @@
             _pri.node.tishi4.on('click', _pri.util.hideNode);
             _pri.node.continueBtn0.on('click', _pri.util.storyStart);
             _pri.node.repeatBtn.on('click', _pri.util.repeatFun);
+            _pri.node.continueBtn1.on('click', _pri.util.continueFinal);
+
         },
         util:{
             repeatFun: function(){
@@ -185,9 +192,18 @@
                 $(_pri.node.ansLogo).hide();
                 $(_pri.node.loseOrSucc).hide();
                 $(_pri.node.returnBtn).hide();
+                //$(_pri.node.shareBtn).css('left','53%');
+                $(_pri.node.continueBtn1).css('display','block');
                 $(_pri.node.lastlogo).css('display','block');
                 $(_pri.node.lastimg).css('display','block');
                 $(_pri.node.nextBtn).css('display','block');
+            },
+            continueFinal: function(){
+                $(this).hide();
+                $(_pri.node.shareBtn).css('left','53%');
+                $(_pri.node.lastimg).hide();
+                $(_pri.node.lastimg2).css('display','block').addClass('slowShow');
+
             },
             finalAnswer: function(){
                 if(_pri.conf.ansnum === 2){
@@ -248,6 +264,7 @@
                 $(_pri.node.threeWrap).hide();
             },
             jinnangFun: function(){
+                $(_pri.node.tishi5).show();
                 $(_pri.node.answerBtn).hide();
                 $(_pri.node.answering).hide();
                 if(!_pri.conf.answerjinnang){
@@ -276,6 +293,7 @@
                 _pri.conf.answerjinnang = 0;
                 $(_pri.node.loseshareIcon).hide();
                 $(_pri.node.shareIcon).hide();
+                $(_pri.node.dot2Wrap).hide();
                 $(_pri.node.dotItem2).show();
                 $(_pri.node.answerBtn).show();
                 $(this).hide();
@@ -475,7 +493,7 @@
                         $(_pri.node.line[i++]).addClass('slowShow');
                         if(i == 9)
                         {
-                            $(_pri.node.dotWrap).show().addClass('slowShow');
+                            $(_pri.node.dotWrap).show().addClass('slowShow2');
                             var clock3 = setTimeout(function(){
                                 $(_pri.node.tishi1).show().addClass('slowShow');
                             },700);
@@ -506,6 +524,7 @@
         },
     }
     init = function(){
+
         _pri.bindUI();
         _pri.util.lighttoggle();
     }

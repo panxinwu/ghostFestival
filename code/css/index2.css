@@ -144,6 +144,7 @@ textarea {
 .container .page1 .story1 {
   position: relative;
   height: 100%;
+  z-index: 99;
 }
 .container .page1 .story1 .styry1Img {
   opacity: 0;
@@ -328,6 +329,7 @@ textarea {
   left: 2.8rem;
   top: 0rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .huocai {
   background: url('../img2/keywordshamo.png') no-repeat;
@@ -343,6 +345,7 @@ textarea {
   left: 2.8rem;
   top: .5rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .shiti {
   background: url('../img2/keywordshiti.png') no-repeat;
@@ -358,6 +361,7 @@ textarea {
   left: 2.8rem;
   top: .5rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .shamo {
   background: url('../img2/keywordhuochai.png') no-repeat;
@@ -373,6 +377,7 @@ textarea {
   left: -.2rem;
   top: -.2rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .questionWrap .question {
   margin-top: 1rem;
@@ -559,6 +564,7 @@ textarea {
   width: 4.225rem;
   height: 4.2rem;
   display: none;
+  position:absolute;left:3.4rem;top:9rem;
 }
 .container .page1 .story1 .yesOrNo .no {
   margin: 2rem 1rem;
@@ -568,6 +574,7 @@ textarea {
   width: 4.225rem;
   height: 4.2rem;
   display: none;
+  position:absolute;left:3.4rem;top:9rem;
 }
 .container .page1 .story1 .goodOrImportant {
   position: relative;
@@ -970,6 +977,13 @@ textarea {
 .loaded .audio_ico {
   opacity: 1!important;
 }
+.slowShow2{
+  opacity: 1;
+  -webkit-animation-name: show2;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
 .slowShow {
   opacity: 1;
   -webkit-animation-name: show;
@@ -1029,6 +1043,16 @@ textarea {
   color: #345AB2;
   margin-top: -1rem;
 }
+.container .page1 .jinnangWrap .threeWrap .jinnangLink .duihao {
+  background: url('../commonImg/tishi7.png') no-repeat;
+  background-size: 4.525rem 3.9rem;
+  width: 4.525rem;
+  height: 3.9rem;
+  position: absolute;
+  top: 1rem;
+  left: 5rem;
+  display: none;
+}
 @-webkit-keyframes print {
   0% {
     opacity: 0;
@@ -1047,6 +1071,14 @@ textarea {
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes show2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
   }
 }
 @-webkit-keyframes show {

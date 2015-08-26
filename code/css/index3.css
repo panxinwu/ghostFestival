@@ -144,6 +144,7 @@ textarea {
 .container .page1 .story1 {
   position: relative;
   height: 100%;
+  z-index: 99;
 }
 .container .page1 .story1 .styry1Img {
   opacity: 0;
@@ -319,6 +320,7 @@ textarea {
   left: 0rem;
   top: -2rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .huocai {
   background: url('../img3/keywordshiti.png') no-repeat;
@@ -334,6 +336,7 @@ textarea {
   left: .1rem;
   top: 1.5rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .shiti {
   background: url('../img3/keywordshamo.png') no-repeat;
@@ -349,6 +352,7 @@ textarea {
   left: .4rem;
   top: 1.5rem;
   z-index: 4;
+  opacity:.6;
 }
 .container .page1 .story1 .keyword_other .shamo {
   background: url('../img3/keywordbeibao.png') no-repeat;
@@ -363,6 +367,7 @@ textarea {
   position: absolute;
   left: .2rem;
   top: -2.1rem;
+  opacity:.6;
   z-index: 4;
 }
 .container .page1 .story1 .questionWrap .question {
@@ -465,35 +470,37 @@ textarea {
 .container .page1 .story1 .answerWrap .answer1 .ansItem {
   background: url('../img3/answer_beibao.png') no-repeat;
   background-size: 16rem 9.9rem;
+  height:10rem;
+  margin-top:-.6rem;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(1) {
-  background-position: -11rem 0;
+  background-position: -12.5rem 0;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(2) {
-  background-position: -6.7rem 0;
+  background-position: -7.9rem 0;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(3) {
-  background-position: -3.7rem 0;
+  background-position: -5rem 0;
   width:3rem;
 }
 .container .page1 .story1 .answerWrap .answer1 .ansItem:nth-child(4) {
   background-position: -.7rem 0;
-  width:3rem;
+  width:4.5rem;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem {
-  background: url('../img3/answer_huochai.png') no-repeat;
+  background: url('../img3/answer_shamo.png') no-repeat;
   background-size: 16rem 9.9rem;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(1) {
   background-position: -10.8rem 0;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(2) {
-  background-position: -9.8rem 0;
-  width:1.5rem;
+  background-position: -7.8rem 0;
+  width:3rem;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(3) {
   background-position: -4.8rem 0;
-  width:5rem;
+  width:3rem;
 }
 .container .page1 .story1 .answerWrap .answer2 .ansItem:nth-child(4) {
   background-position: -1.8rem 0;
@@ -571,6 +578,7 @@ textarea {
   width: 4.225rem;
   height: 4.2rem;
   display: none;
+  position:absolute;left:3.4rem;top:9rem;
 }
 .container .page1 .story1 .goodOrImportant {
   position: relative;
@@ -581,6 +589,17 @@ textarea {
   background-size: 2.1rem 3.1rem;
   width: 2.1rem;
   height: 3.1rem;
+  display: none;
+  position:absolute;left:3.4rem;top:9rem;
+}
+.container .page1 .jinnangWrap .threeWrap .jinnangLink .duihao {
+  background: url('../commonImg/tishi7.png') no-repeat;
+  background-size: 4.525rem 3.9rem;
+  width: 4.525rem;
+  height: 3.9rem;
+  position: absolute;
+  top: 1rem;
+  left: 5rem;
   display: none;
 }
 .container .page1 .story1 .goodOrImportant .important {
@@ -662,6 +681,13 @@ textarea {
 }
 .container .page1 .finalAnswer .lastWrap .lastimg {
   background: url('../img3/successFinal.png') no-repeat;
+  background-size: 16rem 9.9rem;
+  width: 16rem;
+  height: 9.9rem;
+  margin-top: .6rem;
+}
+.container .page1 .finalAnswer .lastWrap .lastimg2 {
+  background: url('../img3/successFinal2.png') no-repeat;
   background-size: 16rem 9.9rem;
   width: 16rem;
   height: 9.9rem;
@@ -886,6 +912,17 @@ textarea {
   top: 21.8rem;
   z-index: 1;
 }
+.continueBtn1 {
+  width: 5.15rem;
+  height: 3.15rem;
+  background-position: 0 -14.25rem;
+  display: none;
+  position: absolute;
+  left: 78%;
+  margin-left: -3.5rem;
+  top: 21.8rem;
+  z-index: 1;
+}
 .chooseNumWrap .btnWrap .continueBtn0 {
   display: none;
 }
@@ -974,6 +1011,13 @@ textarea {
 .loaded .audio_ico {
   opacity: 1!important;
 }
+.slowShow2 {
+  opacity: 1;
+  -webkit-animation-name: show2;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
 .slowShow {
   opacity: 1;
   -webkit-animation-name: show;
@@ -1051,6 +1095,14 @@ textarea {
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes show2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
   }
 }
 @-webkit-keyframes show {

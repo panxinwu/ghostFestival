@@ -145,6 +145,7 @@ textarea {
 .container .page1 .story1 {
   position: relative;
   height: 100%;
+  z-index: 99;
 }
 .container .page1 .story1 .styry1Img {
   opacity: 0;
@@ -329,6 +330,7 @@ textarea {
   left: 2.8rem;
   top: 0rem;
   z-index: 4;
+  opacity: .6;
 }
 .container .page1 .story1 .keyword_other .huocai {
   background: url('../img/keywordhuocai.png') no-repeat;
@@ -344,6 +346,7 @@ textarea {
   left: 2.8rem;
   top: 0rem;
   z-index: 4;
+  opacity: .6;
 }
 .container .page1 .story1 .keyword_other .shiti {
   background: url('../img/keywordshiti.png') no-repeat;
@@ -359,6 +362,7 @@ textarea {
   left: 2.8rem;
   top: 0rem;
   z-index: 4;
+  opacity: .6;
 }
 .container .page1 .story1 .keyword_other .shamo {
   background: url('../img/keywordshamo.png') no-repeat;
@@ -374,6 +378,7 @@ textarea {
   left: 2.8rem;
   top: 0rem;
   z-index: 4;
+  opacity: .6;
 }
 .container .page1 .story1 .questionWrap .question {
   margin-top: 1rem;
@@ -551,6 +556,9 @@ textarea {
   width: 4.225rem;
   height: 4.2rem;
   display: none;
+  position: absolute;
+  left: 3.4rem;
+  top: 9rem;
 }
 .container .page1 .story1 .yesOrNo .no {
   margin: 2rem 1rem;
@@ -560,6 +568,9 @@ textarea {
   width: 4.225rem;
   height: 4.2rem;
   display: none;
+  position: absolute;
+  left: 3.4rem;
+  top: 9rem;
 }
 .container .page1 .story1 .goodOrImportant {
   position: relative;
@@ -585,17 +596,112 @@ textarea {
 }
 .container .page1 .jinnangWrap .threeWrap {
   background: url('../img/jinnang.png') no-repeat;
-  background-size: 11.25rem 16.85rem;
-  width: 11.25rem;
+  background-size: 16rem 16.85rem;
+  width: 16rem;
   height: 16.85rem;
   margin: 0 auto;
   z-index: 4;
 }
 .container .page1 .jinnangWrap .threeWrap .jinnangLink {
-  width: 7.725rem;
+  width: 10rem;
   height: 5.2rem;
   display: block;
   margin-top: 1rem;
+  position: relative;
+}
+.container .page1 .jinnangWrap .threeWrap .jinnangLink .duihao {
+  background: url('../commonImg/tishi7.png') no-repeat;
+  background-size: 4.525rem 3.9rem;
+  width: 4.525rem;
+  height: 3.9rem;
+  position: absolute;
+  top: 1rem;
+  left: 5rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi5 {
+  background: url('../commonImg/tishi5.png') no-repeat;
+  background-size: 3.625rem 9.025rem;
+  width: 3.625rem;
+  height: 9.025rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2rem;
+  top: 50%;
+  margin-top: -4rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi6 {
+  background: url('../commonImg/tishi6.png') no-repeat;
+  background-size: 3.625rem 7.8rem;
+  width: 3.625rem;
+  height: 7.8rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -2rem;
+  top: 50%;
+  margin-top: -4rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi7 {
+  background: url('../commonImg/jinnangsheng.png') no-repeat;
+  background-size: 3.6rem 7.625rem;
+  width: 3.6rem;
+  height: 7.625rem;
+  position: absolute;
+  left: 50%;
+  margin-left: 2.7rem;
+  top: 29%;
+  margin-top: -4rem;
+  display: block;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi7 .num {
+  background: url('../commonImg/0.png') no-repeat;
+  background-size: 1.375rem 1.825rem;
+  width: 1.375rem;
+  height: 1.825rem;
+  position: absolute;
+  left: -61%;
+  margin-left: 2.7rem;
+  top: 97%;
+  margin-top: -4rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi7 .num:nth-child(2) {
+  background: url('../commonImg/1.png') no-repeat;
+  background-size: 1.375rem 1.825rem;
+  width: 1.375rem;
+  height: 1.825rem;
+  position: absolute;
+  left: -61%;
+  margin-left: 2.7rem;
+  top: 97%;
+  margin-top: -4rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi7 .num:nth-child(3) {
+  background: url('../commonImg/2.png') no-repeat;
+  background-size: 1.375rem 1.825rem;
+  width: 1.375rem;
+  height: 1.825rem;
+  position: absolute;
+  left: -61%;
+  margin-left: 2.7rem;
+  top: 97%;
+  margin-top: -4rem;
+  display: none;
+}
+.container .page1 .jinnangWrap .jinnangtishiWrap .tishi7 .num:nth-child(4) {
+  background: url('../commonImg/3.png') no-repeat;
+  background-size: 1.375rem 1.825rem;
+  width: 1.375rem;
+  height: 1.825rem;
+  position: absolute;
+  left: -61%;
+  margin-left: 2.7rem;
+  top: 97%;
+  margin-top: -4rem;
+  display: block;
 }
 .container .page1 .jinnangItem {
   margin-top: 3.5rem;
@@ -707,6 +813,9 @@ textarea {
   background: url('../commonImg/success1.png') no-repeat;
   background-size: 16rem 9.9rem;
 }
+#loseShareBtn1 {
+  left: 78%;
+}
 .shareWrap {
   position: absolute;
   left: 0;
@@ -761,9 +870,16 @@ textarea {
   background-size: 2.475rem 7.4rem;
   width: 2.475rem;
   height: 7.4rem;
-  display: block;
+  display: none;
   margin-top: 2.1rem;
   margin-left: .2rem;
+}
+.chooseNumWrap .chooseNum .prevent {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
 }
 .chooseNumWrap .chooseNum .num {
   width: 3rem;
@@ -787,8 +903,26 @@ textarea {
   top: 7rem;
   z-index: 1;
 }
-.chooseNum3 .chooseNum .numImg .msk {
-  display: none;
+.chooseNum1 .chooseNum .numImg .msk:nth-child(1) {
+  display: block;
+}
+.chooseNum1 .chooseNum .numImg .msk:nth-child(2) {
+  display: block!important;
+}
+.chooseNum1 .chooseNum .prevent {
+  left: -6rem;
+}
+.chooseNum2 .chooseNum .num3 .msk {
+  display: block!important;
+}
+.chooseNum2 .chooseNum .prevent {
+  left: -10rem;
+}
+.chooseNum3 .chooseNum .numImg .msk:nth-child(2) {
+  display: block!important;
+}
+.chooseNum3 .chooseNum .prevent {
+  left: -8rem;
 }
 .chooseNum3 .tishi4 .tishi {
   display: none;
@@ -926,6 +1060,17 @@ textarea {
   top: 22.5rem;
   z-index: 1;
 }
+.loseShareBtn1 {
+  width: 5.625rem;
+  height: 2.175rem;
+  background-position: 0 -27.25rem;
+  display: none;
+  position: absolute;
+  left: 37%;
+  margin-left: -3.5rem;
+  top: 22.5rem;
+  z-index: 1;
+}
 .repeatBtn {
   width: 5.65rem;
   height: 2.3rem;
@@ -955,6 +1100,13 @@ textarea {
 }
 .loaded .audio_ico {
   opacity: 1!important;
+}
+.slowShow2 {
+  opacity: 1;
+  -webkit-animation-name: show2;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
 }
 .slowShow {
   opacity: 1;
@@ -1033,6 +1185,14 @@ textarea {
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
+  }
+}
+@-webkit-keyframes show2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: .6;
   }
 }
 @-webkit-keyframes show {

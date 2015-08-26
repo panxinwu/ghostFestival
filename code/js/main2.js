@@ -277,6 +277,7 @@
                 _pri.conf.answerjinnang = 0;
                 $(_pri.node.loseshareIcon).hide();
                 $(_pri.node.shareIcon).hide();
+                $(_pri.node.dot2Wrap).hide();
                 $(_pri.node.dotItem2).show();
                 $(_pri.node.answerBtn).show();
                 $(this).hide();
@@ -476,7 +477,7 @@
                         $(_pri.node.line[i++]).addClass('slowShow');
                         if(i == 9)
                         {
-                            $(_pri.node.dotWrap).show().addClass('slowShow');
+                            $(_pri.node.dotWrap).show().addClass('slowShow2');
                             var clock3 = setTimeout(function(){
                                 $(_pri.node.tishi1).show().addClass('slowShow');
                             },700);

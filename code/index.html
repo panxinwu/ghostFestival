@@ -16,8 +16,8 @@
 		<i id="percent" class="percent">0%</i>
 	</section>
 </section>
-<!--add chooseNumWrap chooseNum3-->
-	<section id="container" class="container">
+<!--add chooseNumWrap chooseNum1 chooseNum2 chooseNum3-->
+	<section id="container" class="container chooseNumWrap chooseNum2">
 		<script id="template" type="x-tmpl-mustache">
 		<a href="javascript:;" class="audio_ico audio_ico_stop"></a>
 		<section class="page0">
@@ -26,7 +26,7 @@
 			<a id='startBtn' href="javascript:void(0)" class="icon_common start_btn"></a>
 		</section>
 		<section class="page1">
-			<section class="feiye slowShow"></section>
+			<section class="feiye printshake"></section>
 			<section class="story1">
 				<img src="img/story1img.png" alt="" class="styry1Img"/>
 				<section class="kuangWrap">
@@ -51,6 +51,8 @@
 					<i class="tishi1"></i>
 					<i class="tishi2"></i>
 					<i class="tishi3"></i>
+					<i class="tishi5"></i>
+					<i class="tishi6"></i>
 				</section>
 				<section class="keyword_other">
 					<i class="keyword shamo"><b class="circle"></b></i>
@@ -127,9 +129,19 @@
 			</section>
 			<section class="jinnangWrap">
 				<section class="threeWrap">
-					<a href="javascript:void(0)" data-num="0" class="jinnangLink"></a>
-					<a href="javascript:void(0)" data-num="1" class="jinnangLink"></a>
-					<a href="javascript:void(0)" data-num="2" class="jinnangLink"></a>
+					<a href="javascript:void(0)" data-num="0" class="jinnangLink"><i class="duihao"></i></a>
+					<a href="javascript:void(0)" data-num="1" class="jinnangLink"><i class="duihao"></i></a>
+					<a href="javascript:void(0)" data-num="2" class="jinnangLink"><i class="duihao"></i></a>
+				</section>
+				<section class="jinnangtishiWrap">
+					<i class="tishi5"></i>
+					<i class="tishi6"></i>
+					<i class="tishi7">
+						<b class="num"></b>
+						<b class="num"></b>
+						<b class="num"></b>
+						<b class="num"></b>
+					</i>
 				</section>
 				<section class="jinnangItem">
 					<i class="item"></i>
@@ -186,6 +198,7 @@
 			<a id='finalResultBtn' href="javascript:void(0)" class="icon_common finalResultBtn"></a>
 			<a id='nextBtn' href="index2.html" class="icon_common nextBtn"></a>
 			<a id='loseShareBtn' href="javascript:void(0)" class="icon_common loseShareBtn"></a>
+			<a id='loseShareBtn1' href="javascript:void(0)" class="icon_common loseShareBtn1"></a>
 			<a id='repeatBtn' href="javascript:void(0)" class="icon_common repeatBtn"></a>
 		</section>
 		<section class="shareWrap">
@@ -193,9 +206,10 @@
 			<i class="loseshareIcon"></i>
 		</section>
 		<section class="chooseNum">
-			<a href="javascript:void(0)" class="num numImg"></a>
-			<a href="index2.html" class="num numImg"></i></a>
-			<a href="index3.html" class="num numImg"><i class="msk"></i></a>
+			<a href="javascript:void(0)" class="num numImg num1"></a>
+			<a href="index2.html" class="num numImg num2"><i class="msk"></i></a>
+			<a href="index3.html" class="num numImg num3"><i class="msk"></i></a>
+			<i class="prevent"></i>
 		</section>
 		<section class="tishi4">
 			<i class="tishi"></i>
@@ -204,5 +218,6 @@
 	</section>
 	<script src="dest/js/all.js"></script>
 	<script src="js/main.js?V=1.3"></script>
+
 </body>
 </html> 
